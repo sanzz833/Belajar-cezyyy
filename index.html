@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perpustakaan Digital SMP</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f3f6fb;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-size:32px;
+}
+
+.search{
+    width:90%;
+    max-width:500px;
+    margin:20px auto;
+}
+
+.search input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>📚 Perpustakaan Digital SMP</h1>
+<p>Baca Buku Pelajaran Kapan Saja</p>
+</header>
+
+<div class="search">
+<input type="text" id="search" placeholder="Cari mata pelajaran...">
+</div>
+
+<div class="container" id="books">
+
+<div class="card">
+<h2>📖 Bahasa Indonesia</h2>
+<p>Kelas VII</p>
+<button onclick="window.open('books/bahasa-indonesia.pdf')">
+Baca Buku
+</button>
+</div>
+
+<div class="card">
+<h2>➗ Matematika</h2>
+<p>Kelas VII</p>
+<button onclick="window.open('books/matematika.pdf')">
+Baca Buku
+</button>
+</div>
+
+<div class="card">
+<h2>🔬 IPA</h2>
+<p>Kelas VII</p>
+<button onclick="window.open('books/ipa.pdf')">
+Baca Buku
+</button>
+</div>
+
+<div class="card">
+<h2>🌍 IPS</h2>
+<p>Kelas VII</p>
+<button onclick="window.open('books/ips.pdf')">
+Baca Buku
+</button>
+</div>
+
+<div class="card">
+<h2>💻 Informatika</h2>
+<p>Kelas VII</p>
+<button onclick="window.open('books/informatika.pdf')">
+Baca Buku
+</button>
+</div>
+
+<div class="card">
+<h2>🏛 Pendidikan Pancasila</h2>
+<p>Kelas IX</p>
+<button onclick="window.open('books/pancasila.pdf')">
+Baca Buku
+</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 Perpustakaan Digital SMP
+</footer>
+
+<script>
+const search=document.getElementById("search");
+
+search.addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase();
+card.style.display=text.includes(value)?"block":"none";
+});
+});
+</script>
+
+</body>
+</html>
